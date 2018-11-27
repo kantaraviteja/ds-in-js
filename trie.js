@@ -50,7 +50,7 @@ class trieNode {
         
         return res;
     }
-
+ 
     getWordsWithPrefix(str) {
 
         let trie = this;
