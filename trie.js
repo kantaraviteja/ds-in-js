@@ -50,7 +50,11 @@ class trieNode {
         
         return res;
     }
- 
+    /**
+     * 
+     * @param {string} str 
+     * Returns all strings in trie with prefix 'str'
+     */
     getWordsWithPrefix(str) {
 
         let trie = this;
