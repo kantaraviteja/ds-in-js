@@ -1,4 +1,9 @@
 class trieNode {
+    /**
+     * 
+     * @param {Array} words
+     * Returns a trie built with strings in 'words'
+     */
     constructor(words) {
         if (words) {
             let root;
@@ -34,7 +39,14 @@ class trieNode {
     hasChild(e) {
         return (this.children[e]) ? true: false;
     }
-
+    /**
+     * 
+     * @param {trieNode} node
+     * @param {string} str 
+     * @param {Array} res
+     * 
+     * Returns all the words formed by children of a node
+     */
     getAllWords(node, str, res) {
         node = node || this;
         str = str || "";

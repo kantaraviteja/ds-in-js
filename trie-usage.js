@@ -8,5 +8,5 @@ const trie = require("./trie");
     console.log(dictionary.getAllWords()); // returns [ 'apple', 'deal', 'dear', 'cat' ]
 
     console.log(dictionary.getWordsWithPrefix("dea")); // [ 'deal', 'dear' ]
-
+    // Can be used to implement an auto complete feature
 }())
