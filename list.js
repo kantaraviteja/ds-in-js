@@ -52,7 +52,17 @@ function insertNodeAtIndex(head, value, index) {
         return head;
     }
 }
-
+function reverseList(head, prev=null) {
+    if (!head) {
+        return prev;
+    }
+    let tempNode = head.next;
+    head.next = prev;
+    prev = head;
+    head = tempNode;
+    prev = reverseList(tempNode, prev);
+    return prev;
+}
 module.exports = {
     appendNode,
     createNewNode,
@@ -69,6 +79,8 @@ function main() {
     // head = deleteNode(head, 4);
     head = insertNodeAtIndex(head, 4, 3);
     // deleteNode(head, 2);
+    head = reverseList(head, null);
+    head = insertNodeAtIndex(head, 9, 2);
     printList(head);
 }
 main();
