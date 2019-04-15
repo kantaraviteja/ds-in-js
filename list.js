@@ -5,19 +5,14 @@ function createNewNode(value) {
     };
 }
 
-function insertNewNode(head, value) {
+function appendNode(head, value) {
     if (!head) {
-        return null;
+        return createNewNode(value);
+    } else {
+        head.next = appendNode(head.next, value);
+        return head;
     }
-    else if (head.next) {
-        insertNewNode(head.next, value);
-    } 
-    else {
-        head.next = createNewNode(value);
-    }
-    return;
 }
-
 function printList(head) {
     if (head) {
         console.log(head.value);
@@ -25,10 +20,55 @@ function printList(head) {
     }
     return;
 }
+
+function deleteNode(head, value) {
+    if (!head) {
+        return null;
+    } else if (head.value === value){
+        return head.next;
+    } else if(head.next && head.next.value === value){
+        head.next = head.next.next;
+        return head
+    } else {
+        head.next = deleteNode(head.next, value);
+        return head;
+    }
+}
+
+function insertNodeAtIndex(head, value, index) {
+    if (!head) {
+        return createNewNode(value);
+    } else if (index === 0) {
+        let tempNode = createNewNode(value);
+        tempNode.next = head
+        return tempNode;
+    } else if (index === 1) {
+        let tempNode = createNewNode(value);
+        tempNode.next = head.next;
+        head.next = tempNode;
+        return head;
+    } else {
+        head.next = insertNodeAtIndex(head.next, value, index-1);
+        return head;
+    }
+}
+
+module.exports = {
+    appendNode,
+    createNewNode,
+    printList,
+    insertNodeAtIndex,
+    deleteNode
+}
+
 function main() {
-    let head = createNewNode(2);
-    insertNewNode(head, 3);
-    insertNewNode(head, 4);
+    let head = createNewNode(1);
+    head = appendNode(head, 2)
+    head = appendNode(head, 3);
+
+    // head = deleteNode(head, 4);
+    head = insertNodeAtIndex(head, 4, 3);
+    // deleteNode(head, 2);
     printList(head);
 }
 main();
