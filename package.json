@@ -1,0 +1,23 @@
+{
+  "name": "common_ds",
+  "version": "1.0.0",
+  "description": "Has a few useful Datastructures implemented in Js",
+  "main": "trie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kantaraviteja/ds-in-js.git"
+  },
+  "keywords": [
+    "data",
+    "structures"
+  ],
+  "author": "Ravi Teja Kanta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kantaraviteja/ds-in-js/issues"
+  },
+  "homepage": "https://github.com/kantaraviteja/ds-in-js#readme"
+}
