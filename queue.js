@@ -35,12 +35,12 @@ function queue(){
     }
 }
 
-let q = queue();
-q.add(2);
-q.remove();
-q.add(3);
-q.remove();
-q.add(4);
-q.add(5);
-q.remove();
-q.print();
+// let q = queue();
+// q.add(2);
+// q.remove();
+// q.add(3);
+// q.remove();
+// q.add(4);
+// q.add(5);
+// q.remove();
+// q.print();
