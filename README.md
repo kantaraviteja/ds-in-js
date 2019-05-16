@@ -1,7 +1,7 @@
 # ds-in-js
-## At this point, only trie is supported
+## Only trie is exposed in the library for now.
 
-### Trie
+### Sample usage
 > const trie = require("common_ds");
 
     let words = ["apple","deal","dear","cat"];
